@@ -13,7 +13,7 @@ $(window).ready(function(){
       if (validator(currentStep, stepWanted) == true)
       {
         $(".step").removeClass("active");
-        $("#mainForm").find("#"+stepWanted).addClass("active");
+        $("#mainForm").find("#step"+stepWanted).addClass("active");
       }
       else {
         // Error
@@ -21,8 +21,15 @@ $(window).ready(function(){
     }
     else if (way == "forwardBtn") {
       //console.log("Clicked on forward button");
-      currentStep = $(".step.active").attr("id");
-      //console.log("Current step: " + currentStep);
+      currentStep = $(".step.active").attr("idStep");
+      stepWanted = +currentStep + 1;
+      console.log("Current step: " + currentStep);
+      console.log("Step wanted: " + stepWanted);
+      if (validator(currentStep, stepWanted) == true)
+      {
+        $(".step").removeClass("active");
+        $("#mainForm").find("#step"+stepWanted).addClass("active");
+      }
     }
   };
   validator = function (currentStep, stepWanted) {

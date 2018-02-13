@@ -17,19 +17,19 @@
         <div class="formHeader">
           <div class="middleLine"></div>
           <ol class="stepsIndicatorContainer">
-            <li idStep="step1" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Application</span></a></li>
-            <li idStep="step2" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Personal data</span></a></li>
-            <li idStep="step3" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Obligations</span></a></li>
-            <li idStep="step4" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Income</span></a></li>
-            <li idStep="step5" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Send application</span></a></li>
+            <li idStep="1" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Application</span></a></li>
+            <li idStep="2" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Personal data</span></a></li>
+            <li idStep="3" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Obligations</span></a></li>
+            <li idStep="4" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Income</span></a></li>
+            <li idStep="5" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Send application</span></a></li>
           </ol>
         </div>
         <div id="mainForm">
-        <div id="step1" class="step active">STEP 1</div>
-        <div id="step2" class="step">STEP 2</div>
-        <div id="step3" class="step">STEP 3</div>
-        <div id="step4" class="step">STEP 4</div>
-        <div id="step5" class="step">STEP 5</div>
+        <div id="step1" idStep="1" class="step active">STEP 1</div>
+        <div id="step2" idStep="2" class="step">STEP 2</div>
+        <div id="step3" idStep="3" class="step">STEP 3</div>
+        <div id="step4" idStep="4" class="step">STEP 4</div>
+        <div id="step5" idStep="5" class="step">STEP 5</div>
         </div>
         <div class="formFooter">
           <button id="forwardBtn" onClick="changeStep(this, 'forwardBtn')">Forward</button>
