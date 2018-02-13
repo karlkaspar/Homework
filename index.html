@@ -17,22 +17,723 @@
         <div class="formHeader">
           <div class="middleLine"></div>
           <ol class="stepsIndicatorContainer">
-            <li idStep="1" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Application</span></a></li>
-            <li idStep="2" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Personal data</span></a></li>
-            <li idStep="3" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Obligations</span></a></li>
-            <li idStep="4" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Income</span></a></li>
-            <li idStep="5" class="stepIndicator"><a onclick="changeStep(this, 'indicator')" href="#"><span>Send application</span></a></li>
+            <li idstep="1" class="stepIndicator active">
+              <a onclick="changeStep(this, 'indicator')" href="#">
+                <span>Application</span></a>
+            </li>
+            <li idstep="2" class="stepIndicator">
+              <a onclick="changeStep(this, 'indicator')" href="#">
+                <span>Personal data</span></a>
+            </li>
+            <li idstep="3" class="stepIndicator">
+              <a onclick="changeStep(this, 'indicator')" href="#">
+                <span>Obligations</span></a>
+            </li>
+            <li idstep="4" class="stepIndicator">
+              <a onclick="changeStep(this, 'indicator')" href="#">
+                <span>Income</span></a>
+            </li>
+            <li idstep="5" class="stepIndicator">
+              <a onclick="changeStep(this, 'indicator')" href="#">
+                <span>Send application</span></a>
+            </li>
           </ol>
         </div>
         <div id="mainForm">
-        <div id="step1" idStep="1" class="step active">STEP 1</div>
-        <div id="step2" idStep="2" class="step">STEP 2</div>
-        <div id="step3" idStep="3" class="step">STEP 3</div>
-        <div id="step4" idStep="4" class="step">STEP 4</div>
-        <div id="step5" idStep="5" class="step">STEP 5</div>
+          <div id="step1" idstep="1" class="step active">
+            <h2>
+              Are you a bot ?
+            </h2>
+            <div class="error errorNoInfo">Please tell if you are a bot or not!</div>
+            <div class="error secondError">Only humans are allowed to have credit cards at the current time.</div>
+            <form>
+              <input id="human" type="radio" name="species" value="valid">
+              <label for="human">
+                I am a human
+              </label>
+              <br>
+              <input id="bot" type="radio" name="species" value="error">
+              <label for="bot">
+                I am a bot
+              </label>
+              <br>
+              <input id="cyborg" type="radio" name="species" value="error">
+              <label for="cyborg">
+                I am a cyborg!
+              </label>
+            </form>
+          </div>
+          <div id="step2" idstep="2" class="step">
+            <h2>
+              What is your address ?
+            </h2>
+            <div class="error errorNoInfo">Make sure you have chosen your county, town and municipality and have correctly entered your zip code!</div>
+            <form>
+              <label for="town">
+                County, town and municipality:
+              </label>
+              <select class="form-field-long" id="town" name="town">
+                <option value="0"></option>
+                <option value="1351">VALGAMAA, OTEPÄÄ LINN</option>
+                <option value="1001">HARJUMAA, AEGVIIDU ALEV</option>
+                <option value="1002">HARJUMAA, ANIJA VALD</option>
+                <option value="1598">HARJUMAA, ARDU ALEVIK</option>
+                <option value="1032">HARJUMAA, ARUKÜLA ALEVIK</option>
+                <option value="1035">HARJUMAA, ASSAKU ALEVIK</option>
+                <option value="1050">HARJUMAA, HAABNEEME ALEVIK</option>
+                <option value="1600">HARJUMAA, HABAJA ALEVIK</option>
+                <option value="1003">HARJUMAA, HARKU ALEVIK</option>
+                <option value="1004">HARJUMAA, HARKU VALD</option>
+                <option value="1006">HARJUMAA, JÕELÄHTME VALD</option>
+                <option value="1438">HARJUMAA, JÜRI ALEVIK</option>
+                <option value="1496">HARJUMAA, KANGRU ALEVIK</option>
+                <option value="1010">HARJUMAA, KARJAKÜLA ALEVIK</option>
+                <option value="1009">HARJUMAA, KEHRA LINN</option>
+                <option value="1013">HARJUMAA, KEILA</option>
+                <option value="1012">HARJUMAA, KEILA-JOA ALEVIK</option>
+                <option value="1015">HARJUMAA, KIILI ALEV</option>
+                <option value="1016">HARJUMAA, KIILI VALD</option>
+                <option value="1439">HARJUMAA, KIISA ALEVIK</option>
+                <option value="1436">HARJUMAA, KIIU ALEVIK</option>
+                <option value="1059">HARJUMAA, KLOOGA ALEVIK</option>
+                <option value="1437">HARJUMAA, KOLGA ALEVIK</option>
+                <option value="1017">HARJUMAA, KOSE ALEVIK</option>
+                <option value="1018">HARJUMAA, KOSE VALD</option>
+                <option value="1019">HARJUMAA, KOSE-UUEMÕISA ALEVIK</option>
+                <option value="1007">HARJUMAA, KOSTIVERE ALEVIK</option>
+                <option value="1021">HARJUMAA, KUUSALU ALEVIK</option>
+                <option value="1022">HARJUMAA, KUUSALU VALD</option>
+                <option value="1041">HARJUMAA, LAAGRI ALEVIK</option>
+                <option value="1036">HARJUMAA, LAGEDI ALEVIK</option>
+                <option value="1025">HARJUMAA, LOKSA LINN</option>
+                <option value="1008">HARJUMAA, LOO ALEVIK</option>
+                <option value="1497">HARJUMAA, LUIGE ALEVIK</option>
+                <option value="1604">HARJUMAA, LÄÄNE-HARJU VALD</option>
+                <option value="1026">HARJUMAA, MAARDU LINN</option>
+                <option value="1031">HARJUMAA, PALDISKI LINN</option>
+                <option value="1033">HARJUMAA, RAASIKU ALEVIK</option>
+                <option value="1034">HARJUMAA, RAASIKU VALD</option>
+                <option value="1037">HARJUMAA, RAE VALD</option>
+                <option value="1020">HARJUMAA, RAVILA ALEVIK</option>
+                <option value="1028">HARJUMAA, RIISIPERE ALEVIK</option>
+                <option value="1046">HARJUMAA, RUMMU ALEVIK</option>
+                <option value="1039">HARJUMAA, SAKU ALEVIK</option>
+                <option value="1040">HARJUMAA, SAKU VALD</option>
+                <option value="1043">HARJUMAA, SAUE LINN</option>
+                <option value="1042">HARJUMAA, SAUE VALD</option>
+                <option value="1005">HARJUMAA, TABASALU ALEVIK</option>
+                <option value="1045">HARJUMAA, TALLINN</option>
+                <option value="1029">HARJUMAA, TURBA ALEVIK</option>
+                <option value="1038">HARJUMAA, VAIDA ALEVIK</option>
+                <option value="1047">HARJUMAA, VASALEMMA ALEVIK</option>
+                <option value="1051">HARJUMAA, VIIMSI ALEVIK</option>
+                <option value="1052">HARJUMAA, VIIMSI VALD</option>
+                <option value="1049">HARJUMAA, ÄMARI ALEVIK</option>
+                <option value="1058">HIIUMAA, HIIUMAA VALD</option>
+                <option value="1054">HIIUMAA, KÄINA ALEVIK</option>
+                <option value="1537">HIIUMAA, KÄRDLA</option>
+                <option value="1057">HIIUMAA, KÕRGESSAARE ALEVIK</option>
+                <option value="1597">IDA-VIRUMAA, ALUTAGUSE VALD</option>
+                <option value="1087">IDA-VIRUMAA, ERRA ALEVIK</option>
+                <option value="1066">IDA-VIRUMAA, IISAKU ALEVIK</option>
+                <option value="1071">IDA-VIRUMAA, JÕHVI</option>
+                <option value="1069">IDA-VIRUMAA, JÕHVI VALD</option>
+                <option value="1072">IDA-VIRUMAA, KIVIÕLI</option>
+                <option value="1074">IDA-VIRUMAA, KOHTLA-JÄRVE</option>
+                <option value="1075">IDA-VIRUMAA, KOHTLA-NÕMME ALEV</option>
+                <option value="1078">IDA-VIRUMAA, LÜGANUSE ALEVIK</option>
+                <option value="1079">IDA-VIRUMAA, LÜGANUSE VALD</option>
+                <option value="1081">IDA-VIRUMAA, MÄETAGUSE ALEVIK</option>
+                <option value="1083">IDA-VIRUMAA, NARVA LINN</option>
+                <option value="1084">IDA-VIRUMAA, NARVA-JÕESUU LINN</option>
+                <option value="1095">IDA-VIRUMAA, OLGINA ALEVIK</option>
+                <option value="1611">IDA-VIRUMAA, PÜSSI LINN</option>
+                <option value="1086">IDA-VIRUMAA, SILLAMÄE</option>
+                <option value="1096">IDA-VIRUMAA, SINIMÄE ALEVIK</option>
+                <option value="1088">IDA-VIRUMAA, SONDA ALEVIK</option>
+                <option value="1070">IDA-VIRUMAA, TAMMIKU ALEVIK</option>
+                <option value="1090">IDA-VIRUMAA, TOILA ALEVIK</option>
+                <option value="1091">IDA-VIRUMAA, TOILA VALD</option>
+                <option value="1093">IDA-VIRUMAA, TUDULINNA ALEVIK</option>
+                <option value="1092">IDA-VIRUMAA, VOKA ALEVIK</option>
+                <option value="1122">JÄRVAMAA, AMBLA ALEVIK</option>
+                <option value="1124">JÄRVAMAA, ARAVETE ALEVIK</option>
+                <option value="1128">JÄRVAMAA, JÄRVA VALD</option>
+                <option value="1127">JÄRVAMAA, JÄRVA-JAANI ALEV</option>
+                <option value="1131">JÄRVAMAA, KOERU ALEVIK</option>
+                <option value="1125">JÄRVAMAA, KÄRAVETE ALEVIK</option>
+                <option value="1268">JÄRVAMAA, KÄRU ALEVIK</option>
+                <option value="1136">JÄRVAMAA, OISU ALEVIK</option>
+                <option value="1139">JÄRVAMAA, PAIDE</option>
+                <option value="1129">JÄRVAMAA, PEETRI ALEVIK</option>
+                <option value="1576">JÄRVAMAA, PEETRI ALEVIK</option>
+                <option value="1140">JÄRVAMAA, ROOSNA-ALLIKU ALEVIK</option>
+                <option value="1142">JÄRVAMAA, SÄREVERE ALEVIK</option>
+                <option value="1144">JÄRVAMAA, TÜRI LINN</option>
+                <option value="1143">JÄRVAMAA, TÜRI VALD</option>
+                <option value="1145">JÄRVAMAA, VÄÄTSA ALEVIK</option>
+                <option value="1110">JÕGEVAMAA, ADAVERE ALEVIK</option>
+                <option value="1064">JÕGEVAMAA, AVINURME ALEVIK</option>
+                <option value="1457">JÕGEVAMAA, JÕGEVA ALEVIK</option>
+                <option value="1102">JÕGEVAMAA, JÕGEVA LINN</option>
+                <option value="1098">JÕGEVAMAA, JÕGEVA VALD</option>
+                <option value="1111">JÕGEVAMAA, KAMARI ALEVIK</option>
+                <option value="1099">JÕGEVAMAA, KUREMAA ALEVIK</option>
+                <option value="1100">JÕGEVAMAA, LAIUSE ALEVIK</option>
+                <option value="1076">JÕGEVAMAA, LOHUSUU ALEVIK</option>
+                <option value="1103">JÕGEVAMAA, MUSTVEE</option>
+                <option value="1607">JÕGEVAMAA, MUSTVEE VALD</option>
+                <option value="1106">JÕGEVAMAA, PALAMUSE ALEVIK</option>
+                <option value="1108">JÕGEVAMAA, PUURMANI ALEVIK</option>
+                <option value="1113">JÕGEVAMAA, PÕLTSAMAA LINN</option>
+                <option value="1112">JÕGEVAMAA, PÕLTSAMAA VALD</option>
+                <option value="1118">JÕGEVAMAA, SADALA ALEVIK</option>
+                <option value="1101">JÕGEVAMAA, SIIMUSTI ALEVIK</option>
+                <option value="1119">JÕGEVAMAA, TORMA ALEVIK</option>
+                <option value="1062">LÄÄNE-VIRUMAA, ASERI ALEVIK</option>
+                <option value="1169">LÄÄNE-VIRUMAA, HALJALA ALEVIK</option>
+                <option value="1170">LÄÄNE-VIRUMAA, HALJALA VALD</option>
+                <option value="1171">LÄÄNE-VIRUMAA, HULJA ALEVIK</option>
+                <option value="1167">LÄÄNE-VIRUMAA, KADRINA ALEVIK</option>
+                <option value="1172">LÄÄNE-VIRUMAA, KADRINA VALD</option>
+                <option value="1197">LÄÄNE-VIRUMAA, KILTSI ALEVIK</option>
+                <option value="1173">LÄÄNE-VIRUMAA, KUNDA LINN</option>
+                <option value="1174">LÄÄNE-VIRUMAA, LAEKVERE ALEVIK</option>
+                <option value="1134">LÄÄNE-VIRUMAA, LEHTSE ALEVIK</option>
+                <option value="1178">LÄÄNE-VIRUMAA, LEPNA ALEVIK</option>
+                <option value="1357">LÄÄNE-VIRUMAA, NÄPI ALEVIK</option>
+                <option value="1190">LÄÄNE-VIRUMAA, PAJUSTI ALEVIK</option>
+                <option value="1176">LÄÄNE-VIRUMAA, RAKKE ALEVIK</option>
+                <option value="1180">LÄÄNE-VIRUMAA, RAKVERE LINN</option>
+                <option value="1179">LÄÄNE-VIRUMAA, RAKVERE VALD</option>
+                <option value="1182">LÄÄNE-VIRUMAA, ROELA ALEVIK</option>
+                <option value="1168">LÄÄNE-VIRUMAA, SIMUNA ALEVIK</option>
+                <option value="1185">LÄÄNE-VIRUMAA, SÄÄSE ALEVIK</option>
+                <option value="1183">LÄÄNE-VIRUMAA, SÕMERU ALEVIK</option>
+                <option value="1187">LÄÄNE-VIRUMAA, TAMSALU LINN</option>
+                <option value="1188">LÄÄNE-VIRUMAA, TAPA</option>
+                <option value="1135">LÄÄNE-VIRUMAA, TAPA VALD</option>
+                <option value="1191">LÄÄNE-VIRUMAA, TUDU ALEVIK</option>
+                <option value="1114">LÄÄNE-VIRUMAA, UHTNA ALEVIK</option>
+                <option value="1192">LÄÄNE-VIRUMAA, VINNI ALEVIK</option>
+                <option value="1193">LÄÄNE-VIRUMAA, VINNI VALD</option>
+                <option value="1194">LÄÄNE-VIRUMAA, VIRU-JAAGUPI ALEVIK</option>
+                <option value="1499">LÄÄNE-VIRUMAA, VIRU-NIGULA ALEVIK</option>
+                <option value="1195">LÄÄNE-VIRUMAA, VIRU-NIGULA VALD</option>
+                <option value="1198">LÄÄNE-VIRUMAA, VÄIKE-MAARJA ALEVIK</option>
+                <option value="1199">LÄÄNE-VIRUMAA, VÄIKE-MAARJA VALD</option>
+                <option value="1196">LÄÄNE-VIRUMAA, VÕSU ALEVIK</option>
+                <option value="1147">LÄÄNEMAA, HAAPSALU LINN</option>
+                <option value="1156">LÄÄNEMAA, LÄÄNE-NIGULA VALD</option>
+                <option value="1163">LÄÄNEMAA, PALIVERE ALEVIK</option>
+                <option value="1158">LÄÄNEMAA, PARALEPA ALEVIK</option>
+                <option value="1161">LÄÄNEMAA, RISTI ALEVIK</option>
+                <option value="1164">LÄÄNEMAA, TAEBLA ALEVIK</option>
+                <option value="1160">LÄÄNEMAA, UUEMÕISA ALEVIK</option>
+                <option value="1166">LÄÄNEMAA, VORMSI VALD</option>
+                <option value="1223">PÄRNUMAA, ARE ALEVIK</option>
+                <option value="1225">PÄRNUMAA, AUDRU ALEVIK</option>
+                <option value="1228">PÄRNUMAA, HÄÄDEMEESTE ALEVIK</option>
+                <option value="1229">PÄRNUMAA, HÄÄDEMEESTE VALD</option>
+                <option value="1231">PÄRNUMAA, KIHNU VALD</option>
+                <option value="1232">PÄRNUMAA, KILINGI-NÕMME LINN</option>
+                <option value="1234">PÄRNUMAA, LAVASSAARE ALEV</option>
+                <option value="1152">PÄRNUMAA, LIHULA LINN</option>
+                <option value="1605">PÄRNUMAA, LÄÄNERANNA VALD</option>
+                <option value="1235">PÄRNUMAA, PAIKUSE ALEV</option>
+                <option value="1237">PÄRNUMAA, PÄRNU LINN</option>
+                <option value="1238">PÄRNUMAA, PÄRNU-JAAGUPI ALEV</option>
+                <option value="1609">PÄRNUMAA, PÕHJA-PÄRNUMAA VALD</option>
+                <option value="1240">PÄRNUMAA, SAARDE VALD</option>
+                <option value="1241">PÄRNUMAA, SAUGA ALEVIK</option>
+                <option value="1243">PÄRNUMAA, SINDI LINN</option>
+                <option value="1251">PÄRNUMAA, TAHKURANNA KÜLA</option>
+                <option value="1458">PÄRNUMAA, TIHEMETSA ALEVIK</option>
+                <option value="1246">PÄRNUMAA, TOOTSI ALEV</option>
+                <option value="1247">PÄRNUMAA, TORI ALEVIK</option>
+                <option value="1248">PÄRNUMAA, TORI VALD</option>
+                <option value="1249">PÄRNUMAA, TÕSTAMAA ALEVIK</option>
+                <option value="1255">PÄRNUMAA, VÄNDRA ALEV</option>
+                <option value="1459">PÄRNUMAA, VÕISTE ALEVIK</option>
+                <option value="1149">PÄÄRNUMAA, VIRTSU ALEVIK</option>
+                <option value="1200">PÕLVAMAA, AHJA ALEVIK</option>
+                <option value="1202">PÕLVAMAA, KANEPI ALEVIK</option>
+                <option value="1203">PÕLVAMAA, KANEPI VALD</option>
+                <option value="1316">PÕLVAMAA, MEHIKOORMA ALEVIK</option>
+                <option value="1207">PÕLVAMAA, MOOSTE ALEVIK</option>
+                <option value="1516">PÕLVAMAA, PÕLVA LINN</option>
+                <option value="1211">PÕLVAMAA, PÕLVA VALD</option>
+                <option value="1213">PÕLVAMAA, RÄPINA LINN</option>
+                <option value="1215">PÕLVAMAA, RÄPINA VALD</option>
+                <option value="1217">PÕLVAMAA, VASTSE-KUUSTE ALEVIK</option>
+                <option value="1219">PÕLVAMAA, VERIORA ALEVIK</option>
+                <option value="1461">PÕLVAMAA, VÕÕPSU ALEVIK</option>
+                <option value="1596">RAPLAMAA, AESPA ALEVIK</option>
+                <option value="1274">RAPLAMAA, ALU ALEVIK</option>
+                <option value="1261">RAPLAMAA, EIDAPERE ALEVIK</option>
+                <option value="1464">RAPLAMAA, HAGERI ALEVIK</option>
+                <option value="1465">RAPLAMAA, HAGUDI ALEVIK</option>
+                <option value="1256">RAPLAMAA, JUURU ALEVIK</option>
+                <option value="1258">RAPLAMAA, JÄRVAKANDI ALEV</option>
+                <option value="1462">RAPLAMAA, KAEREPERE ALEVIK</option>
+                <option value="1259">RAPLAMAA, KAIU ALEVIK</option>
+                <option value="1262">RAPLAMAA, KEAVA ALEVIK</option>
+                <option value="1263">RAPLAMAA, KEHTNA ALEVIK</option>
+                <option value="1264">RAPLAMAA, KEHTNA VALD</option>
+                <option value="1267">RAPLAMAA, KOHILA ALEV</option>
+                <option value="1265">RAPLAMAA, KOHILA VALD</option>
+                <option value="1275">RAPLAMAA, KUUSIKU ALEVIK</option>
+                <option value="1463">RAPLAMAA, LELLE ALEVIK</option>
+                <option value="1272">RAPLAMAA, MÄRJAMAA ALEV</option>
+                <option value="1271">RAPLAMAA, MÄRJAMAA VALD</option>
+                <option value="1266">RAPLAMAA, PRILLIMÄE ALEVIK</option>
+                <option value="1277">RAPLAMAA, RAPLA LINN</option>
+                <option value="1276">RAPLAMAA, RAPLA VALD</option>
+                <option value="1282">SAAREMAA, ASTE ALEVIK</option>
+                <option value="1280">SAAREMAA, KIHELKONNA ALEVIK</option>
+                <option value="1602">SAAREMAA, KUDJAPE ALEVIK</option>
+                <option value="1284">SAAREMAA, KURESSAARE LINN</option>
+                <option value="1283">SAAREMAA, KÄRLA ALEVIK</option>
+                <option value="1294">SAAREMAA, KÕLJALA KÜLA</option>
+                <option value="1287">SAAREMAA, LEISI ALEVIK</option>
+                <option value="1290">SAAREMAA, MUHU VALD</option>
+                <option value="1292">SAAREMAA, ORISSAARE ALEVIK</option>
+                <option value="1297">SAAREMAA, RUHNU VALD</option>
+                <option value="1619">SAAREMAA, SAAREMAA VALD</option>
+                <option value="1298">SAAREMAA, SALME ALEVIK</option>
+                <option value="1301">SAAREMAA, VALJALA ALEVIK</option>
+                <option value="1608">SAREMAA, NASVA ALEVIK</option>
+                <option value="1303">TARTUMAA, ALATSKIVI ALEVIK</option>
+                <option value="1305">TARTUMAA, ELVA LINN</option>
+                <option value="1599">TARTUMAA, ELVA VALD</option>
+                <option value="1337">TARTUMAA, ILMATSALU ALEVIK</option>
+                <option value="1308">TARTUMAA, KALLASTE LINN</option>
+                <option value="1309">TARTUMAA, KAMBJA ALEVIK</option>
+                <option value="1310">TARTUMAA, KAMBJA VALD</option>
+                <option value="1321">TARTUMAA, KASEPÄÄ ALEVIK</option>
+                <option value="1601">TARTUMAA, KASTRE VALD</option>
+                <option value="1322">TARTUMAA, KOLKJA ALEVIK</option>
+                <option value="1467">TARTUMAA, KUREKÜLA ALEVIK</option>
+                <option value="1330">TARTUMAA, KÄÄRDI ALEVIK</option>
+                <option value="1333">TARTUMAA, KÕRVEKÜLA ALEVIK</option>
+                <option value="1603">TARTUMAA, KÜLITSE ALEVIK</option>
+                <option value="1313">TARTUMAA, LUUNJA ALEVIK</option>
+                <option value="1314">TARTUMAA, LUUNJA VALD</option>
+                <option value="1334">TARTUMAA, LÄHTE ALEVIK</option>
+                <option value="1338">TARTUMAA, MÄRJA ALEVIK</option>
+                <option value="1318">TARTUMAA, NÕO ALEVIK</option>
+                <option value="1319">TARTUMAA, NÕO VALD</option>
+                <option value="1323">TARTUMAA, PEIPSIÄÄRE VALD</option>
+                <option value="1326">TARTUMAA, PUHJA ALEVIK</option>
+                <option value="1328">TARTUMAA, RANNU ALEVIK</option>
+                <option value="1307">TARTUMAA, ROIU ALEVIK</option>
+                <option value="1612">TARTUMAA, RÄNI ALEVIK</option>
+                <option value="1332">TARTUMAA, RÕNGU ALEVIK</option>
+                <option value="1456">TARTUMAA, TABIVERE ALEVIK</option>
+                <option value="1336">TARTUMAA, TARTU LINN</option>
+                <option value="1335">TARTUMAA, TARTU VALD</option>
+                <option value="1320">TARTUMAA, TÕRAVERE ALEVIK</option>
+                <option value="1343">TARTUMAA, TÕRVANDI ALEVIK</option>
+                <option value="1466">TARTUMAA, ULILA ALEVIK</option>
+                <option value="1615">TARTUMAA, VAHI ALEVIK</option>
+                <option value="1324">TARTUMAA, VARNJA ALEVIK</option>
+                <option value="1617">TARTUMAA, VASULA ALEVIK</option>
+                <option value="1341">TARTUMAA, VÕNNU ALEVIK</option>
+                <option value="1618">TARTUMAA, ÄKSI ALEVIK</option>
+                <option value="1344">TARTUMAA, ÜLENURME ALEVIK</option>
+                <option value="1346">VALGAMAA, HELME ALEVIK</option>
+                <option value="1348">VALGAMAA, HUMMULI ALEVIK</option>
+                <option value="1468">VALGAMAA, LAATRE ALEVIK</option>
+                <option value="1356">VALGAMAA, OTEPÄÄ VALD</option>
+                <option value="1353">VALGAMAA, PUKA ALEVIK</option>
+                <option value="1358">VALGAMAA, SANGASTE ALEVIK</option>
+                <option value="1469">VALGAMAA, TSIRGULIINA ALEVIK</option>
+                <option value="1362">VALGAMAA, TÕRVA LINN</option>
+                <option value="1614">VALGAMAA, TÕRVA VALD</option>
+                <option value="1363">VALGAMAA, VALGA LINN</option>
+                <option value="1616">VALGAMAA, VALGA VALD</option>
+                <option value="1470">VALGAMAA, ÕRU ALEVIK</option>
+                <option value="1366">VILJANDIMAA, ABJA-PALUOJA</option>
+                <option value="1367">VILJANDIMAA, HALLISTE ALEVIK</option>
+                <option value="1369">VILJANDIMAA, KARKSI-NUIA</option>
+                <option value="1370">VILJANDIMAA, KOLGA-JAANI ALEVIK</option>
+                <option value="1373">VILJANDIMAA, KÕPU ALEVIK</option>
+                <option value="1606">VILJANDIMAA, MULGI VALD</option>
+                <option value="1384">VILJANDIMAA, MUSTLA ALEVIK</option>
+                <option value="1375">VILJANDIMAA, MÕISAKÜLA</option>
+                <option value="1376">VILJANDIMAA, OLUSTVERE ALEVIK</option>
+                <option value="1610">VILJANDIMAA, PÕHJA-SAKALA VALD</option>
+                <option value="1386">VILJANDIMAA, RAMSI ALEVIK</option>
+                <option value="1383">VILJANDIMAA, SUURE-JAANI LINN</option>
+                <option value="1387">VILJANDIMAA, VIIRATSI ALEVIK</option>
+                <option value="1389">VILJANDIMAA, VILJANDI LINN</option>
+                <option value="1380">VILJANDIMAA, VILJANDI VALD</option>
+                <option value="1390">VILJANDIMAA, VÕHMA LINN</option>
+                <option value="1377">VILJANDIMAA, ÕISU ALEVIK</option>
+                <option value="1394">VÕRUMAA, ANTSLA</option>
+                <option value="1391">VÕRUMAA, ANTSLA VALD</option>
+                <option value="1392">VÕRUMAA, KOBELA ALEVIK</option>
+                <option value="1410">VÕRUMAA, KOSE ALEVIK</option>
+                <option value="1398">VÕRUMAA, MISSO ALEVIK</option>
+                <option value="1411">VÕRUMAA, PARKSEPA ALEVIK</option>
+                <option value="1401">VÕRUMAA, RÕUGE ALEVIK</option>
+                <option value="1402">VÕRUMAA, RÕUGE VALD</option>
+                <option value="1613">VÕRUMAA, SETOMAA VALD</option>
+                <option value="1403">VÕRUMAA, SÕMERPALU ALEVIK</option>
+                <option value="1393">VÕRUMAA, VANA-ANTSLA ALEVIK</option>
+                <option value="1406">VÕRUMAA, VARSTU ALEVIK</option>
+                <option value="1408">VÕRUMAA, VASTSELIINA ALEVIK</option>
+                <option value="1412">VÕRUMAA, VÄIMELA ALEVIK</option>
+                <option value="1221">VÕRUMAA, VÄRSKA ALEVIK</option>
+                <option value="1414">VÕRUMAA, VÕRU LINN</option>
+                <option value="1413">VÕRUMAA, VÕRU VALD</option>
+                <option value="1351">VALGAMAA, OTEPÄÄ LINN</option>
+                <option value="1001">HARJUMAA, AEGVIIDU ALEV</option>
+                <option value="1002">HARJUMAA, ANIJA VALD</option>
+                <option value="1598">HARJUMAA, ARDU ALEVIK</option>
+                <option value="1032">HARJUMAA, ARUKÜLA ALEVIK</option>
+                <option value="1035">HARJUMAA, ASSAKU ALEVIK</option>
+                <option value="1050">HARJUMAA, HAABNEEME ALEVIK</option>
+                <option value="1600">HARJUMAA, HABAJA ALEVIK</option>
+                <option value="1003">HARJUMAA, HARKU ALEVIK</option>
+                <option value="1004">HARJUMAA, HARKU VALD</option>
+                <option value="1006">HARJUMAA, JÕELÄHTME VALD</option>
+                <option value="1438">HARJUMAA, JÜRI ALEVIK</option>
+                <option value="1496">HARJUMAA, KANGRU ALEVIK</option>
+                <option value="1010">HARJUMAA, KARJAKÜLA ALEVIK</option>
+                <option value="1009">HARJUMAA, KEHRA LINN</option>
+                <option value="1013">HARJUMAA, KEILA</option>
+                <option value="1012">HARJUMAA, KEILA-JOA ALEVIK</option>
+                <option value="1015">HARJUMAA, KIILI ALEV</option>
+                <option value="1016">HARJUMAA, KIILI VALD</option>
+                <option value="1439">HARJUMAA, KIISA ALEVIK</option>
+                <option value="1436">HARJUMAA, KIIU ALEVIK</option>
+                <option value="1059">HARJUMAA, KLOOGA ALEVIK</option>
+                <option value="1437">HARJUMAA, KOLGA ALEVIK</option>
+                <option value="1017">HARJUMAA, KOSE ALEVIK</option>
+                <option value="1018">HARJUMAA, KOSE VALD</option>
+                <option value="1019">HARJUMAA, KOSE-UUEMÕISA ALEVIK</option>
+                <option value="1007">HARJUMAA, KOSTIVERE ALEVIK</option>
+                <option value="1021">HARJUMAA, KUUSALU ALEVIK</option>
+                <option value="1022">HARJUMAA, KUUSALU VALD</option>
+                <option value="1041">HARJUMAA, LAAGRI ALEVIK</option>
+                <option value="1036">HARJUMAA, LAGEDI ALEVIK</option>
+                <option value="1025">HARJUMAA, LOKSA LINN</option>
+                <option value="1008">HARJUMAA, LOO ALEVIK</option>
+                <option value="1497">HARJUMAA, LUIGE ALEVIK</option>
+                <option value="1604">HARJUMAA, LÄÄNE-HARJU VALD</option>
+                <option value="1026">HARJUMAA, MAARDU LINN</option>
+                <option value="1031">HARJUMAA, PALDISKI LINN</option>
+                <option value="1033">HARJUMAA, RAASIKU ALEVIK</option>
+                <option value="1034">HARJUMAA, RAASIKU VALD</option>
+                <option value="1037">HARJUMAA, RAE VALD</option>
+                <option value="1020">HARJUMAA, RAVILA ALEVIK</option>
+                <option value="1028">HARJUMAA, RIISIPERE ALEVIK</option>
+                <option value="1046">HARJUMAA, RUMMU ALEVIK</option>
+                <option value="1039">HARJUMAA, SAKU ALEVIK</option>
+                <option value="1040">HARJUMAA, SAKU VALD</option>
+                <option value="1043">HARJUMAA, SAUE LINN</option>
+                <option value="1042">HARJUMAA, SAUE VALD</option>
+                <option value="1005">HARJUMAA, TABASALU ALEVIK</option>
+                <option value="1045">HARJUMAA, TALLINN</option>
+                <option value="1029">HARJUMAA, TURBA ALEVIK</option>
+                <option value="1038">HARJUMAA, VAIDA ALEVIK</option>
+                <option value="1047">HARJUMAA, VASALEMMA ALEVIK</option>
+                <option value="1051">HARJUMAA, VIIMSI ALEVIK</option>
+                <option value="1052">HARJUMAA, VIIMSI VALD</option>
+                <option value="1049">HARJUMAA, ÄMARI ALEVIK</option>
+                <option value="1058">HIIUMAA, HIIUMAA VALD</option>
+                <option value="1054">HIIUMAA, KÄINA ALEVIK</option>
+                <option value="1537">HIIUMAA, KÄRDLA</option>
+                <option value="1057">HIIUMAA, KÕRGESSAARE ALEVIK</option>
+                <option value="1597">IDA-VIRUMAA, ALUTAGUSE VALD</option>
+                <option value="1087">IDA-VIRUMAA, ERRA ALEVIK</option>
+                <option value="1066">IDA-VIRUMAA, IISAKU ALEVIK</option>
+                <option value="1071">IDA-VIRUMAA, JÕHVI</option>
+                <option value="1069">IDA-VIRUMAA, JÕHVI VALD</option>
+                <option value="1072">IDA-VIRUMAA, KIVIÕLI</option>
+                <option value="1074">IDA-VIRUMAA, KOHTLA-JÄRVE</option>
+                <option value="1075">IDA-VIRUMAA, KOHTLA-NÕMME ALEV</option>
+                <option value="1078">IDA-VIRUMAA, LÜGANUSE ALEVIK</option>
+                <option value="1079">IDA-VIRUMAA, LÜGANUSE VALD</option>
+                <option value="1081">IDA-VIRUMAA, MÄETAGUSE ALEVIK</option>
+                <option value="1083">IDA-VIRUMAA, NARVA LINN</option>
+                <option value="1084">IDA-VIRUMAA, NARVA-JÕESUU LINN</option>
+                <option value="1095">IDA-VIRUMAA, OLGINA ALEVIK</option>
+                <option value="1611">IDA-VIRUMAA, PÜSSI LINN</option>
+                <option value="1086">IDA-VIRUMAA, SILLAMÄE</option>
+                <option value="1096">IDA-VIRUMAA, SINIMÄE ALEVIK</option>
+                <option value="1088">IDA-VIRUMAA, SONDA ALEVIK</option>
+                <option value="1070">IDA-VIRUMAA, TAMMIKU ALEVIK</option>
+                <option value="1090">IDA-VIRUMAA, TOILA ALEVIK</option>
+                <option value="1091">IDA-VIRUMAA, TOILA VALD</option>
+                <option value="1093">IDA-VIRUMAA, TUDULINNA ALEVIK</option>
+                <option value="1092">IDA-VIRUMAA, VOKA ALEVIK</option>
+                <option value="1122">JÄRVAMAA, AMBLA ALEVIK</option>
+                <option value="1124">JÄRVAMAA, ARAVETE ALEVIK</option>
+                <option value="1128">JÄRVAMAA, JÄRVA VALD</option>
+                <option value="1127">JÄRVAMAA, JÄRVA-JAANI ALEV</option>
+                <option value="1131">JÄRVAMAA, KOERU ALEVIK</option>
+                <option value="1125">JÄRVAMAA, KÄRAVETE ALEVIK</option>
+                <option value="1268">JÄRVAMAA, KÄRU ALEVIK</option>
+                <option value="1136">JÄRVAMAA, OISU ALEVIK</option>
+                <option value="1139">JÄRVAMAA, PAIDE</option>
+                <option value="1129">JÄRVAMAA, PEETRI ALEVIK</option>
+                <option value="1576">JÄRVAMAA, PEETRI ALEVIK</option>
+                <option value="1140">JÄRVAMAA, ROOSNA-ALLIKU ALEVIK</option>
+                <option value="1142">JÄRVAMAA, SÄREVERE ALEVIK</option>
+                <option value="1144">JÄRVAMAA, TÜRI LINN</option>
+                <option value="1143">JÄRVAMAA, TÜRI VALD</option>
+                <option value="1145">JÄRVAMAA, VÄÄTSA ALEVIK</option>
+                <option value="1110">JÕGEVAMAA, ADAVERE ALEVIK</option>
+                <option value="1064">JÕGEVAMAA, AVINURME ALEVIK</option>
+                <option value="1457">JÕGEVAMAA, JÕGEVA ALEVIK</option>
+                <option value="1102">JÕGEVAMAA, JÕGEVA LINN</option>
+                <option value="1098">JÕGEVAMAA, JÕGEVA VALD</option>
+                <option value="1111">JÕGEVAMAA, KAMARI ALEVIK</option>
+                <option value="1099">JÕGEVAMAA, KUREMAA ALEVIK</option>
+                <option value="1100">JÕGEVAMAA, LAIUSE ALEVIK</option>
+                <option value="1076">JÕGEVAMAA, LOHUSUU ALEVIK</option>
+                <option value="1103">JÕGEVAMAA, MUSTVEE</option>
+                <option value="1607">JÕGEVAMAA, MUSTVEE VALD</option>
+                <option value="1106">JÕGEVAMAA, PALAMUSE ALEVIK</option>
+                <option value="1108">JÕGEVAMAA, PUURMANI ALEVIK</option>
+                <option value="1113">JÕGEVAMAA, PÕLTSAMAA LINN</option>
+                <option value="1112">JÕGEVAMAA, PÕLTSAMAA VALD</option>
+                <option value="1118">JÕGEVAMAA, SADALA ALEVIK</option>
+                <option value="1101">JÕGEVAMAA, SIIMUSTI ALEVIK</option>
+                <option value="1119">JÕGEVAMAA, TORMA ALEVIK</option>
+                <option value="1062">LÄÄNE-VIRUMAA, ASERI ALEVIK</option>
+                <option value="1169">LÄÄNE-VIRUMAA, HALJALA ALEVIK</option>
+                <option value="1170">LÄÄNE-VIRUMAA, HALJALA VALD</option>
+                <option value="1171">LÄÄNE-VIRUMAA, HULJA ALEVIK</option>
+                <option value="1167">LÄÄNE-VIRUMAA, KADRINA ALEVIK</option>
+                <option value="1172">LÄÄNE-VIRUMAA, KADRINA VALD</option>
+                <option value="1197">LÄÄNE-VIRUMAA, KILTSI ALEVIK</option>
+                <option value="1173">LÄÄNE-VIRUMAA, KUNDA LINN</option>
+                <option value="1174">LÄÄNE-VIRUMAA, LAEKVERE ALEVIK</option>
+                <option value="1134">LÄÄNE-VIRUMAA, LEHTSE ALEVIK</option>
+                <option value="1178">LÄÄNE-VIRUMAA, LEPNA ALEVIK</option>
+                <option value="1357">LÄÄNE-VIRUMAA, NÄPI ALEVIK</option>
+                <option value="1190">LÄÄNE-VIRUMAA, PAJUSTI ALEVIK</option>
+                <option value="1176">LÄÄNE-VIRUMAA, RAKKE ALEVIK</option>
+                <option value="1180">LÄÄNE-VIRUMAA, RAKVERE LINN</option>
+                <option value="1179">LÄÄNE-VIRUMAA, RAKVERE VALD</option>
+                <option value="1182">LÄÄNE-VIRUMAA, ROELA ALEVIK</option>
+                <option value="1168">LÄÄNE-VIRUMAA, SIMUNA ALEVIK</option>
+                <option value="1185">LÄÄNE-VIRUMAA, SÄÄSE ALEVIK</option>
+                <option value="1183">LÄÄNE-VIRUMAA, SÕMERU ALEVIK</option>
+                <option value="1187">LÄÄNE-VIRUMAA, TAMSALU LINN</option>
+                <option value="1188">LÄÄNE-VIRUMAA, TAPA</option>
+                <option value="1135">LÄÄNE-VIRUMAA, TAPA VALD</option>
+                <option value="1191">LÄÄNE-VIRUMAA, TUDU ALEVIK</option>
+                <option value="1114">LÄÄNE-VIRUMAA, UHTNA ALEVIK</option>
+                <option value="1192">LÄÄNE-VIRUMAA, VINNI ALEVIK</option>
+                <option value="1193">LÄÄNE-VIRUMAA, VINNI VALD</option>
+                <option value="1194">LÄÄNE-VIRUMAA, VIRU-JAAGUPI ALEVIK</option>
+                <option value="1499">LÄÄNE-VIRUMAA, VIRU-NIGULA ALEVIK</option>
+                <option value="1195">LÄÄNE-VIRUMAA, VIRU-NIGULA VALD</option>
+                <option value="1198">LÄÄNE-VIRUMAA, VÄIKE-MAARJA ALEVIK</option>
+                <option value="1199">LÄÄNE-VIRUMAA, VÄIKE-MAARJA VALD</option>
+                <option value="1196">LÄÄNE-VIRUMAA, VÕSU ALEVIK</option>
+                <option value="1147">LÄÄNEMAA, HAAPSALU LINN</option>
+                <option value="1156">LÄÄNEMAA, LÄÄNE-NIGULA VALD</option>
+                <option value="1163">LÄÄNEMAA, PALIVERE ALEVIK</option>
+                <option value="1158">LÄÄNEMAA, PARALEPA ALEVIK</option>
+                <option value="1161">LÄÄNEMAA, RISTI ALEVIK</option>
+                <option value="1164">LÄÄNEMAA, TAEBLA ALEVIK</option>
+                <option value="1160">LÄÄNEMAA, UUEMÕISA ALEVIK</option>
+                <option value="1166">LÄÄNEMAA, VORMSI VALD</option>
+                <option value="1223">PÄRNUMAA, ARE ALEVIK</option>
+                <option value="1225">PÄRNUMAA, AUDRU ALEVIK</option>
+                <option value="1228">PÄRNUMAA, HÄÄDEMEESTE ALEVIK</option>
+                <option value="1229">PÄRNUMAA, HÄÄDEMEESTE VALD</option>
+                <option value="1231">PÄRNUMAA, KIHNU VALD</option>
+                <option value="1232">PÄRNUMAA, KILINGI-NÕMME LINN</option>
+                <option value="1234">PÄRNUMAA, LAVASSAARE ALEV</option>
+                <option value="1152">PÄRNUMAA, LIHULA LINN</option>
+                <option value="1605">PÄRNUMAA, LÄÄNERANNA VALD</option>
+                <option value="1235">PÄRNUMAA, PAIKUSE ALEV</option>
+                <option value="1237">PÄRNUMAA, PÄRNU LINN</option>
+                <option value="1238">PÄRNUMAA, PÄRNU-JAAGUPI ALEV</option>
+                <option value="1609">PÄRNUMAA, PÕHJA-PÄRNUMAA VALD</option>
+                <option value="1240">PÄRNUMAA, SAARDE VALD</option>
+                <option value="1241">PÄRNUMAA, SAUGA ALEVIK</option>
+                <option value="1243">PÄRNUMAA, SINDI LINN</option>
+                <option value="1251">PÄRNUMAA, TAHKURANNA KÜLA</option>
+                <option value="1458">PÄRNUMAA, TIHEMETSA ALEVIK</option>
+                <option value="1246">PÄRNUMAA, TOOTSI ALEV</option>
+                <option value="1247">PÄRNUMAA, TORI ALEVIK</option>
+                <option value="1248">PÄRNUMAA, TORI VALD</option>
+                <option value="1249">PÄRNUMAA, TÕSTAMAA ALEVIK</option>
+                <option value="1255">PÄRNUMAA, VÄNDRA ALEV</option>
+                <option value="1459">PÄRNUMAA, VÕISTE ALEVIK</option>
+                <option value="1149">PÄÄRNUMAA, VIRTSU ALEVIK</option>
+                <option value="1200">PÕLVAMAA, AHJA ALEVIK</option>
+                <option value="1202">PÕLVAMAA, KANEPI ALEVIK</option>
+                <option value="1203">PÕLVAMAA, KANEPI VALD</option>
+                <option value="1316">PÕLVAMAA, MEHIKOORMA ALEVIK</option>
+                <option value="1207">PÕLVAMAA, MOOSTE ALEVIK</option>
+                <option value="1516">PÕLVAMAA, PÕLVA LINN</option>
+                <option value="1211">PÕLVAMAA, PÕLVA VALD</option>
+                <option value="1213">PÕLVAMAA, RÄPINA LINN</option>
+                <option value="1215">PÕLVAMAA, RÄPINA VALD</option>
+                <option value="1217">PÕLVAMAA, VASTSE-KUUSTE ALEVIK</option>
+                <option value="1219">PÕLVAMAA, VERIORA ALEVIK</option>
+                <option value="1461">PÕLVAMAA, VÕÕPSU ALEVIK</option>
+                <option value="1596">RAPLAMAA, AESPA ALEVIK</option>
+                <option value="1274">RAPLAMAA, ALU ALEVIK</option>
+                <option value="1261">RAPLAMAA, EIDAPERE ALEVIK</option>
+                <option value="1464">RAPLAMAA, HAGERI ALEVIK</option>
+                <option value="1465">RAPLAMAA, HAGUDI ALEVIK</option>
+                <option value="1256">RAPLAMAA, JUURU ALEVIK</option>
+                <option value="1258">RAPLAMAA, JÄRVAKANDI ALEV</option>
+                <option value="1462">RAPLAMAA, KAEREPERE ALEVIK</option>
+                <option value="1259">RAPLAMAA, KAIU ALEVIK</option>
+                <option value="1262">RAPLAMAA, KEAVA ALEVIK</option>
+                <option value="1263">RAPLAMAA, KEHTNA ALEVIK</option>
+                <option value="1264">RAPLAMAA, KEHTNA VALD</option>
+                <option value="1267">RAPLAMAA, KOHILA ALEV</option>
+                <option value="1265">RAPLAMAA, KOHILA VALD</option>
+                <option value="1275">RAPLAMAA, KUUSIKU ALEVIK</option>
+                <option value="1463">RAPLAMAA, LELLE ALEVIK</option>
+                <option value="1272">RAPLAMAA, MÄRJAMAA ALEV</option>
+                <option value="1271">RAPLAMAA, MÄRJAMAA VALD</option>
+                <option value="1266">RAPLAMAA, PRILLIMÄE ALEVIK</option>
+                <option value="1277">RAPLAMAA, RAPLA LINN</option>
+                <option value="1276">RAPLAMAA, RAPLA VALD</option>
+                <option value="1282">SAAREMAA, ASTE ALEVIK</option>
+                <option value="1280">SAAREMAA, KIHELKONNA ALEVIK</option>
+                <option value="1602">SAAREMAA, KUDJAPE ALEVIK</option>
+                <option value="1284">SAAREMAA, KURESSAARE LINN</option>
+                <option value="1283">SAAREMAA, KÄRLA ALEVIK</option>
+                <option value="1294">SAAREMAA, KÕLJALA KÜLA</option>
+                <option value="1287">SAAREMAA, LEISI ALEVIK</option>
+                <option value="1290">SAAREMAA, MUHU VALD</option>
+                <option value="1292">SAAREMAA, ORISSAARE ALEVIK</option>
+                <option value="1297">SAAREMAA, RUHNU VALD</option>
+                <option value="1619">SAAREMAA, SAAREMAA VALD</option>
+                <option value="1298">SAAREMAA, SALME ALEVIK</option>
+                <option value="1301">SAAREMAA, VALJALA ALEVIK</option>
+                <option value="1608">SAREMAA, NASVA ALEVIK</option>
+                <option value="1303">TARTUMAA, ALATSKIVI ALEVIK</option>
+                <option value="1305">TARTUMAA, ELVA LINN</option>
+                <option value="1599">TARTUMAA, ELVA VALD</option>
+                <option value="1337">TARTUMAA, ILMATSALU ALEVIK</option>
+                <option value="1308">TARTUMAA, KALLASTE LINN</option>
+                <option value="1309">TARTUMAA, KAMBJA ALEVIK</option>
+                <option value="1310">TARTUMAA, KAMBJA VALD</option>
+                <option value="1321">TARTUMAA, KASEPÄÄ ALEVIK</option>
+                <option value="1601">TARTUMAA, KASTRE VALD</option>
+                <option value="1322">TARTUMAA, KOLKJA ALEVIK</option>
+                <option value="1467">TARTUMAA, KUREKÜLA ALEVIK</option>
+                <option value="1330">TARTUMAA, KÄÄRDI ALEVIK</option>
+                <option value="1333">TARTUMAA, KÕRVEKÜLA ALEVIK</option>
+                <option value="1603">TARTUMAA, KÜLITSE ALEVIK</option>
+                <option value="1313">TARTUMAA, LUUNJA ALEVIK</option>
+                <option value="1314">TARTUMAA, LUUNJA VALD</option>
+                <option value="1334">TARTUMAA, LÄHTE ALEVIK</option>
+                <option value="1338">TARTUMAA, MÄRJA ALEVIK</option>
+                <option value="1318">TARTUMAA, NÕO ALEVIK</option>
+                <option value="1319">TARTUMAA, NÕO VALD</option>
+                <option value="1323">TARTUMAA, PEIPSIÄÄRE VALD</option>
+                <option value="1326">TARTUMAA, PUHJA ALEVIK</option>
+                <option value="1328">TARTUMAA, RANNU ALEVIK</option>
+                <option value="1307">TARTUMAA, ROIU ALEVIK</option>
+                <option value="1612">TARTUMAA, RÄNI ALEVIK</option>
+                <option value="1332">TARTUMAA, RÕNGU ALEVIK</option>
+                <option value="1456">TARTUMAA, TABIVERE ALEVIK</option>
+                <option value="1336">TARTUMAA, TARTU LINN</option>
+                <option value="1335">TARTUMAA, TARTU VALD</option>
+                <option value="1320">TARTUMAA, TÕRAVERE ALEVIK</option>
+                <option value="1343">TARTUMAA, TÕRVANDI ALEVIK</option>
+                <option value="1466">TARTUMAA, ULILA ALEVIK</option>
+                <option value="1615">TARTUMAA, VAHI ALEVIK</option>
+                <option value="1324">TARTUMAA, VARNJA ALEVIK</option>
+                <option value="1617">TARTUMAA, VASULA ALEVIK</option>
+                <option value="1341">TARTUMAA, VÕNNU ALEVIK</option>
+                <option value="1618">TARTUMAA, ÄKSI ALEVIK</option>
+                <option value="1344">TARTUMAA, ÜLENURME ALEVIK</option>
+                <option value="1346">VALGAMAA, HELME ALEVIK</option>
+                <option value="1348">VALGAMAA, HUMMULI ALEVIK</option>
+                <option value="1468">VALGAMAA, LAATRE ALEVIK</option>
+                <option value="1356">VALGAMAA, OTEPÄÄ VALD</option>
+                <option value="1353">VALGAMAA, PUKA ALEVIK</option>
+                <option value="1358">VALGAMAA, SANGASTE ALEVIK</option>
+                <option value="1469">VALGAMAA, TSIRGULIINA ALEVIK</option>
+                <option value="1362">VALGAMAA, TÕRVA LINN</option>
+                <option value="1614">VALGAMAA, TÕRVA VALD</option>
+                <option value="1363">VALGAMAA, VALGA LINN</option>
+                <option value="1616">VALGAMAA, VALGA VALD</option>
+                <option value="1470">VALGAMAA, ÕRU ALEVIK</option>
+                <option value="1366">VILJANDIMAA, ABJA-PALUOJA</option>
+                <option value="1367">VILJANDIMAA, HALLISTE ALEVIK</option>
+                <option value="1369">VILJANDIMAA, KARKSI-NUIA</option>
+                <option value="1370">VILJANDIMAA, KOLGA-JAANI ALEVIK</option>
+                <option value="1373">VILJANDIMAA, KÕPU ALEVIK</option>
+                <option value="1606">VILJANDIMAA, MULGI VALD</option>
+                <option value="1384">VILJANDIMAA, MUSTLA ALEVIK</option>
+                <option value="1375">VILJANDIMAA, MÕISAKÜLA</option>
+                <option value="1376">VILJANDIMAA, OLUSTVERE ALEVIK</option>
+                <option value="1610">VILJANDIMAA, PÕHJA-SAKALA VALD</option>
+                <option value="1386">VILJANDIMAA, RAMSI ALEVIK</option>
+                <option value="1383">VILJANDIMAA, SUURE-JAANI LINN</option>
+                <option value="1387">VILJANDIMAA, VIIRATSI ALEVIK</option>
+                <option value="1389">VILJANDIMAA, VILJANDI LINN</option>
+                <option value="1380">VILJANDIMAA, VILJANDI VALD</option>
+                <option value="1390">VILJANDIMAA, VÕHMA LINN</option>
+                <option value="1377">VILJANDIMAA, ÕISU ALEVIK</option>
+                <option value="1394">VÕRUMAA, ANTSLA</option>
+                <option value="1391">VÕRUMAA, ANTSLA VALD</option>
+                <option value="1392">VÕRUMAA, KOBELA ALEVIK</option>
+                <option value="1410">VÕRUMAA, KOSE ALEVIK</option>
+                <option value="1398">VÕRUMAA, MISSO ALEVIK</option>
+                <option value="1411">VÕRUMAA, PARKSEPA ALEVIK</option>
+                <option value="1401">VÕRUMAA, RÕUGE ALEVIK</option>
+                <option value="1402">VÕRUMAA, RÕUGE VALD</option>
+                <option value="1613">VÕRUMAA, SETOMAA VALD</option>
+                <option value="1403">VÕRUMAA, SÕMERPALU ALEVIK</option>
+                <option value="1393">VÕRUMAA, VANA-ANTSLA ALEVIK</option>
+                <option value="1406">VÕRUMAA, VARSTU ALEVIK</option>
+                <option value="1408">VÕRUMAA, VASTSELIINA ALEVIK</option>
+                <option value="1412">VÕRUMAA, VÄIMELA ALEVIK</option>
+                <option value="1221">VÕRUMAA, VÄRSKA ALEVIK</option>
+                <option value="1414">VÕRUMAA, VÕRU LINN</option>
+                <option value="1413">VÕRUMAA, VÕRU VALD</option>
+              </select>
+              <div class="zipCode">
+                <label for="zipCode">Zip code: </label>
+                <input id="zipCode" type="text" placeholder="12345">
+              </div>
+            </form>
+          </div>
+          <div id="step3" idstep="3" class="step">
+            <h2>Check any of these options which resemble yourself. <br>NB! Choose atleast two.</h2>
+            <div class="error secondError">We do'nt take kindly to such negativity around these parts.</div>
+            <div class="error errorNoInfo">Please choose atleast two options</div>
+            <form>
+              <input type="checkbox" value="error"> I am in high dept.<br>
+              <input type="checkbox" value="valid"> I pay my dues on time.<br>
+              <input type="checkbox" value="valid"> I have over 1 000 000 € in a bank in a Switzerland bank account.<br>
+              <input type="checkbox" value="error"> The glass is half empty.<br>
+              <input type="checkbox" value="valid"> I make a lot of spontaneous purchases.<br>
+              <input type="checkbox" value="error"> Dogs could be great companions and really brighten things up if they didn’t make such a mess and all that noise.<br>
+              <input type="checkbox" value="error"> I just won the lottery, I can’t tell my family and friends because if I did, they’d all want some of the money.<br>
+              <input type="checkbox" value="valid"> I'll research and explore ways to be more effective.<br>
+              <input type="checkbox" value="valid"> The only mistakes/failures in life are the ones we do not try to correct, or to learn from.<br>
+            </form>
+          </div>
+          <div id="step4" idstep="4" class="step">
+            <h2></h2>
+            <div class="error errorNoInfo">Please tell if you are a bot or not!</div>
+          </div>
+          <div id="step5" idstep="5" class="step">
+            <h2></h2>
+            <div class="error errorNoInfo">Please tell if you are a bot or not!</div>
+          </div>
         </div>
         <div class="formFooter">
-          <button id="forwardBtn" onClick="changeStep(this, 'forwardBtn')">Forward</button>
+          <button id="forwardBtn" onclick="changeStep(this, 'forwardBtn')">Forward</button>
         </div>
       </div>
     </div>

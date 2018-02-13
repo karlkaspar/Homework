@@ -9,6 +9,11 @@ h1
   font-weight: bold;
   padding-left: 10px;
 }
+h2
+{
+  font-size: 18px;
+  color: #f35b1c;
+}
 a span
 {
   text-decoration: underline;
@@ -96,10 +101,17 @@ a span
   font-size: 19px;
   font-weight: bold;
   margin: 0 auto;
+  transition: all 200ms ease-in-out;
+}
+.stepIndicator.active a::before
+{
+  background: #f35b1c;
+  transition: all 200ms ease-in-out;
 }
 .stepIndicator:hover ::before
 {
   background: #ee7023;
+  transition: all 200ms ease-in-out;
 }
 /*Pseudo element bofer was getting a underline*/
 .stepIndicator a:hover
@@ -156,13 +168,32 @@ a span
 #mainForm
 {
   background: #FFF;
-  height: 300px;
 }
 .step
 {
+  padding: 20px;
   display: none;
 }
 .step.active
+{
+  display: block;
+}
+form input
+{
+  margin: 10px;
+}
+.error
+{
+  width: 100%;
+  display: none;
+  background: rgba(255,0,0,0.4);
+  color: #FFF;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.zipCode
 {
   display: block;
 }
