@@ -51,7 +51,7 @@ a span
   width: 100%;
   height: 100px;
 }
-.stepsContainer
+.stepsIndicatorContainer
 {
   display: flex;
   flex-direction: row;
@@ -68,19 +68,20 @@ a span
   right: 0px;
 
 }
-.stepsContainer li
+.stepsIndicatorContainer li
 {
   list-style: none;
 }
-.step
+.stepIndicator
 {
   display: inline-block;
 }
-.step a
+.stepIndicator a
 {
   font-size: 13px;
+  display: inline-block;
 }
-.step a::before
+.stepIndicator a::before
 {
   border-radius: 50%;
   min-width: 30px;
@@ -96,12 +97,12 @@ a span
   font-weight: bold;
   margin: 0 auto;
 }
-.step:hover ::before
+.stepIndicator:hover ::before
 {
   background: #ee7023;
 }
 /*Pseudo element bofer was getting a underline*/
-.step a:hover
+.stepIndicator a:hover
 {
   text-decoration: none;
 }
@@ -157,6 +158,14 @@ a span
   background: #FFF;
   height: 300px;
 }
+.step
+{
+  display: none;
+}
+.step.active
+{
+  display: block;
+}
 @media all and (max-width: 840px) and (min-width: 570px)
 {
   .middleLine
@@ -184,13 +193,13 @@ a span
     padding-bottom: 20px;
     padding-top: 20px;
   }
-  .stepsContainer
+  .stepsIndicatorContainer
   {
     display: block;
     height: auto;
     position: relative;
   }
-  .stepsContainer li
+  .stepsIndicatorContainer li
   {
     display: block;
     width: 100%;
@@ -198,7 +207,7 @@ a span
     padding-bottom: 5px;
     padding-top: 5px;
   }
-  .stepsContainer li ::before
+  .stepsIndicatorContainer li ::before
   {
     display: inline-block;
     margin-right: 10px;
