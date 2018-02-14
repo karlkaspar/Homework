@@ -123,5 +123,20 @@ $(window).ready(function(){
         return true;
       }
     }
+    if (currentStep == 4)
+    {
+        var moneyMade = $("#step4 input").val();
+        if ($(moneyMade).length == 0 && $("#job").val().length == 0)
+        {
+          return false;
+        }
+        else if(moneyMade < 400 || $(moneyMade).length != 0)
+        {
+          return "error";
+        }
+        else {
+          return true;
+        }
+    }
   };
 });

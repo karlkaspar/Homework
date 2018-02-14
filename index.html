@@ -724,8 +724,22 @@
             </form>
           </div>
           <div id="step4" idstep="4" class="step">
-            <h2></h2>
-            <div class="error errorNoInfo">Please tell if you are a bot or not!</div>
+            <h2>How much money do you make, and what is it that you do for a living ?</h2>
+            <div class="error errorNoInfo">Please fill the fields with the required data!</div>
+            <div class="error secondError">A credit card would be too mighty for your current wallet</div>
+            <form>
+              <div class="col-md-12 noPadding">
+                <label for="money">Net salary:</label>
+                <input type="text" id="money" placeholder="example:(50.87)"> €
+              </div>
+              <div class="col-md-12 noPadding">
+                <label for="job">Describe your job: </label>
+                <div class="col-md-12 noPadding">
+                  <textarea class="col-md-12" name="job" id="job" cols="30" rows="10" placeholder="Master scripter, hacker"></textarea>
+                </div>
+              </div>
+            </form>
+
           </div>
           <div id="step5" idstep="5" class="step">
             <h2></h2>
