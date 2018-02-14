@@ -14,6 +14,11 @@ h2
   font-size: 18px;
   color: #f35b1c;
 }
+h3
+{
+  line-height: 150px;
+  color: #f35b1c;
+}
 a span
 {
   text-decoration: underline;
@@ -168,6 +173,10 @@ a span
 #mainForm
 {
   background: #FFF;
+  position: relative;
+  min-height: 200px;
+  display: inline-block;
+  width: 100%;
 }
 .step
 {
@@ -196,6 +205,11 @@ form input
 .zipCode
 {
   display: block;
+}
+#success
+{
+  text-align: center;
+  display: none;
 }
 @media all and (max-width: 840px) and (min-width: 570px)
 {

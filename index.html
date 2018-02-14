@@ -41,14 +41,14 @@
         </div>
         <div id="mainForm">
           <div id="step1" idstep="1" class="step active">
-            <h2>
+            <h2 class="final">
               Are you a bot ?
             </h2>
             <div class="error errorNoInfo">Please tell if you are a bot or not!</div>
             <div class="error secondError">Only humans are allowed to have credit cards at the current time.</div>
             <form>
-              <input id="human" type="radio" name="species" value="valid">
-              <label for="human">
+              <input class="final" id="human" type="radio" name="species" value="valid">
+              <label class="final" for="human">
                 I am a human
               </label>
               <br>
@@ -726,11 +726,11 @@
           <div id="step4" idstep="4" class="step">
             <h2>How much money do you make, and what is it that you do for a living ?</h2>
             <div class="error errorNoInfo">Please fill the fields with the required data!</div>
-            <div class="error secondError">A credit card would be too mighty for your current wallet</div>
+            <div class="error secondError">A credit card would be too mighty for your current financial capabilities</div>
             <form>
               <div class="col-md-12 noPadding">
                 <label for="money">Net salary:</label>
-                <input type="text" id="money" placeholder="example:(50.87)"> €
+                <input type="text" id="money" placeholder="50.87"> €
               </div>
               <div class="col-md-12 noPadding">
                 <label for="job">Describe your job: </label>
@@ -739,11 +739,14 @@
                 </div>
               </div>
             </form>
-
           </div>
           <div id="step5" idstep="5" class="step">
-            <h2></h2>
-            <div class="error errorNoInfo">Please tell if you are a bot or not!</div>
+            <h2>Do you confirm that the information above is correct and that you agree to the terms of service ?</h2>
+            <input id="confirmData" type="checkbox" value="valid"> I confirm that the data above is correct, and I agree to the terms of service.
+            <div class="error">Please agree to the terms of service and confirm the validity of your data!</div>
+          </div>
+          <div id="success">
+            <h3>Your application has been successfully sent!</h3>
           </div>
         </div>
         <div class="formFooter">
