@@ -16,8 +16,8 @@ h2
 }
 h3
 {
-  line-height: 150px;
   color: #f35b1c;
+  padding-top: 60px;
 }
 a span
 {
@@ -219,6 +219,10 @@ form input
   border-radius: 4px;
   padding: 10px;
   margin-bottom: 10px;
+}
+#town
+{
+  max-width: 100%;
 }
 .zipCode
 {
