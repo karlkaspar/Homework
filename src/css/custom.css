@@ -3,7 +3,6 @@ body
   height: 100vh;
   counter-reset: section;
 }
-body, html { height: 100%; margin: 0; padding: 0; }
 h1
 {
   color: #f35b1c;
