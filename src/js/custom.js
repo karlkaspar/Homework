@@ -1,86 +1,47 @@
-$(window).ready(function(){
-  console.log("custom.js");
+$(window).ready(function() {
   changeStep = function (elem, way) {
     console.log("changeStep()");
     var currentStep = "";
     var stepWanted = "";
     var validOrNot = "";
-    if (way == "indicator") {
-      //console.log("Clicked on numeric indicator");
-      currentStep = $(".step.active").attr("idStep");
-      stepWanted = $(elem).parent().attr("idStep");
-      validOrNot = validator(currentStep, stepWanted);
-      if (validOrNot == true) {
-        //console.log("validator() returned true");
-        $("#step"+currentStep+" .error").hide();
-        $(".stepIndicator").removeClass("active");
-        $(elem).parent().addClass("active");
-        $(".step").removeClass("active");
-        $("#mainForm").find("#step"+stepWanted).addClass("active");
-        $(".step").hide();
-        $("#step"+stepWanted).show();
-      }
-      else if (validOrNot == false) {
-        //console.log("Validator returned false");
-        $("#step"+currentStep+" .errorNoInfo").show();
-      }
-      else if (validOrNot == "error") {
-        console.log("Second error");
-        $("#step"+currentStep+" .secondError").show();
-      }
-      else if(validOrNot == "lastStep") {
-
-      }
+    currentStep = $(".step.active").attr("idStep");
+    way == "indicator" ? stepWanted = $(elem).parent().attr("idStep") : stepWanted = +currentStep + 1;
+    validOrNot = validator(currentStep, stepWanted);
+    console.log("Validator returned: " + validOrNot);
+    if (validOrNot == true) {
+      $("#step"+currentStep+" .error").hide();
+      $(".stepIndicator").removeClass("active");
+      $(".stepIndicator[idstep='"+stepWanted+"']").addClass("active");
+      $(".step").removeClass("active");
+      $("#step"+stepWanted).addClass("active");
+      $(".step").hide();
+      $("#step"+stepWanted).show();
     }
-    else if (way == "forwardBtn") {
-      //console.log("Clicked on forward button");
-      currentStep = $(".step.active").attr("idstep");
-      stepWanted = +currentStep + 1;
-      validOrNot = validator(currentStep, stepWanted);
-      if (validOrNot == true) {
-        console.log("Validator returned true");
-        $("#step"+currentStep+" .error").hide();
-        $(".stepIndicator").removeClass("active");
-        $(".stepIndicator[idstep='"+stepWanted+"']").addClass("active");
-        $(".step").removeClass("active");
-        $("#step"+stepWanted).addClass("active").show();
-      }
-      else if (validOrNot == false) {
-        console.log("Validator returned false");
-        $("#step"+currentStep+" .errorNoInfo").show();
-      }
-      else if (validOrNot == "error") {
-        console.log("Second error");
-        $("#step"+currentStep+" .secondError").show();
-      }
-      else if(validOrNot == "lastStep") {
-
-      }
+    else if (validOrNot == false) {
+      $("#step"+currentStep+" .errorNoInfo").show();
+    }
+    else if (validOrNot == "error") {
+      $("#step"+currentStep+" .secondError").show();
     }
   };
   validator = function (currentStep, stepWanted) {
-    if(currentStep != 5){
+    console.log("validatior(Current step: "+currentStep+", Wanted step: "+stepWanted+")");
+    if(currentStep != 5 && stepWanted < 5) {
       toggleInputsDisabled(false);
     }
-    else if(stepWanted != 5)  {
+    else if(currentStep == 5 && stepWanted < 5) {
       toggleInputsDisabled(false);
-      hideAllStepsButOne(stepWanted);
+      return true;
     }
-    //console.log("validator()");
-    console.log("Current step: " + currentStep);
-    console.log("Wanted step: " + stepWanted);
     if (stepWanted < currentStep) {
-      console.log("make it");
+      // Going back to any of the previous steps
       return true;
     }
     else if ((stepWanted - currentStep) > 1 ) {
-      /*
-        Trying to itereate steps too much, can positively iterate by 1.
-        I chose not to show an error message, as this code would get too messy, and as you can see I can already handle error messages.
-      */
+      // Trying to itereate steps too much, can positively iterate by 1, even if step is previously filled I chose not to show an error message
       return;
     }
-    if (currentStep == 1) {
+    if (currentStep == 1) { // STEP 1 VALIDATION
       if ($("#step1 input:radio:checked").val() == "error") {
         return "error";
       }
@@ -91,7 +52,7 @@ $(window).ready(function(){
         return true;
       }
     }
-    if (currentStep == 2) {
+    if (currentStep == 2) { // STEP 2 VALIDATION
       if ($("#step2 select").val() == "0") {
         return false;
       }
@@ -103,9 +64,9 @@ $(window).ready(function(){
         return false;
       }
     }
-    if (currentStep == 3) {
+    if (currentStep == 3) { // STEP 3 VALIDATION
       var combinedValues = [];
-      $("#step3 input[type='checkbox']:checked").each(function(){
+      $("#step3 input[type='checkbox']:checked").each(function() {
         combinedValues.push($(this).val());
       });
       var negativityCount = 0;
@@ -114,58 +75,52 @@ $(window).ready(function(){
               negativityCount++;
           }
       }
-      if(combinedValues.length < 2)  {
+      if(combinedValues.length < 2) {
         return false;
       }
-      else if (negativityCount >= 2 )  {
+      else if (negativityCount >= 2 ) {
         return "error";
       }
       else {
         return true;
       }
     }
-    if (currentStep == 4) {
-        console.log(currentStep);
-        var moneyMade = $("#step4 input").val();
-        if ($(moneyMade).length == 0 && $("#job").val().length == 0) {
-          return false;
-        }
-        else if(moneyMade < 400 || $(moneyMade).length != 0) {
-          return "error";
-        }
-        else if (stepWanted == 5){
-          /*STEP 5*/
-          console.log("step5");
-          $("#step5 .error").hide();
-          $("#step"+currentStep+" .error").hide();
-          $(".stepIndicator").removeClass("active");
-          $(".stepIndicator[idstep='5']").addClass("active");
-          $(".step").removeClass("active");
-          $("#mainForm").find("#step5").addClass("active");
-          toggleInputsDisabled(true);
-          $(".step").show();
-          $("#forwardBtn").click(function(){
-            console.log("Finalize credit card");
-            if($("#step5 input[type='checkbox']:checked").length == 1) {
-              console.log("confirmData is true");
-              $(".step, .formHeader *, .formFooter button").hide();
-              $("#success").show();
-            }
-            else{
-              $("#step5 .error").show();
-            }
-          });
-        }
+    if (currentStep == 4) { // STEP 4 VALIDATION
+      var moneyMade = $("#step4 input").val();
+      if ($(moneyMade).length == 0 && $("#job").val().length == 0) {
+        return false;
+      }
+      else if(moneyMade < 400 || $(moneyMade).length != 0) {
+        return "error";
+      }
+      else if (stepWanted == 5) {
+        console.log("Current step = 5");
+        $("#step5 .error").hide();
+        $("#step"+currentStep+" .error").hide();
+        $(".stepIndicator").removeClass("active");
+        $(".stepIndicator[idstep='5']").addClass("active");
+        $(".step").removeClass("active");
+        $("#mainForm").find("#step5").addClass("active");
+        $(".step").show();
+        toggleInputsDisabled(true);
+        $("#forwardBtn").click(function(){
+          console.log("Trying to finalize credit card application");
+          if($("#step5 input[type='checkbox']:checked").length == 1) {
+            console.log("Data is confirmed");
+            $(".step, .formHeader *, .formFooter button").hide();
+            $("#success").show();
+          }
+          else {
+            $("#step5 .error").show();
+          }
+        });
+      }
     }
   };
   function toggleInputsDisabled(onOrOff) {
-    $(".step:not(.active)").find("input, select, textarea").each(function(){
+    // Toggle Inputs to disabled, so that you could not change any of the information of the confirmation page
+    $(".step:not(.active)").find("input, select, textarea").each(function() {
       $(this).prop( "disabled", onOrOff );
     });
-  }
-  function hideAllStepsButOne(stepWanted) {
-    console.log(stepWanted);
-    $(".step").hide();
-    $("#step"+stepWanted).show();
   }
 });

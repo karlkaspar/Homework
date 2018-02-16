@@ -3,6 +3,7 @@ body
   height: 100vh;
   counter-reset: section;
 }
+body, html { height: 100%; margin: 0; padding: 0; }
 h1
 {
   color: #f35b1c;
@@ -23,27 +24,45 @@ a span
 {
   text-decoration: underline;
 }
+.tip
+{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  text-align: center;
+  color: #007bff;
+  display: inline-block;
+  margin-left: 5px;
+  line-height: 15px;
+}
 #mainContainer
 {
-  height: 100%;
   background: #ebe7e2;
   padding-top: 20px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
 }
 #page
 {
-  height: 100%;
+  height: auto;
   position: relative;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  padding: 0px;
+  padding-bottom: 20px;
 }
 @media (min-width: 1100px)
 {
   #page
   {
     width: 1024px;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    height: 100%;
-    margin: 0 auto;
   }
 }
 @media (max-width: 1100px)
