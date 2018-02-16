@@ -17,6 +17,8 @@ $(window).ready(function(){
         $(elem).parent().addClass("active");
         $(".step").removeClass("active");
         $("#mainForm").find("#step"+stepWanted).addClass("active");
+        $(".step").hide();
+        $("#step"+stepWanted).show();
       }
       else if (validOrNot == false) {
         //console.log("Validator returned false");
@@ -41,7 +43,7 @@ $(window).ready(function(){
         $(".stepIndicator").removeClass("active");
         $(".stepIndicator[idstep='"+stepWanted+"']").addClass("active");
         $(".step").removeClass("active");
-        $("#step"+stepWanted).addClass("active");
+        $("#step"+stepWanted).addClass("active").show();
       }
       else if (validOrNot == false) {
         console.log("Validator returned false");
@@ -57,11 +59,18 @@ $(window).ready(function(){
     }
   };
   validator = function (currentStep, stepWanted) {
-    toggleInputsDisabled(false);
+    if(currentStep != 5){
+      toggleInputsDisabled(false);
+    }
+    else if(stepWanted != 5)  {
+      toggleInputsDisabled(false);
+      hideAllStepsButOne(stepWanted);
+    }
     //console.log("validator()");
     console.log("Current step: " + currentStep);
     console.log("Wanted step: " + stepWanted);
     if (stepWanted < currentStep) {
+      console.log("make it");
       return true;
     }
     else if ((stepWanted - currentStep) > 1 ) {
@@ -124,7 +133,7 @@ $(window).ready(function(){
         else if(moneyMade < 400 || $(moneyMade).length != 0) {
           return "error";
         }
-        else {
+        else if (stepWanted == 5){
           /*STEP 5*/
           console.log("step5");
           $("#step5 .error").hide();
@@ -154,7 +163,9 @@ $(window).ready(function(){
       $(this).prop( "disabled", onOrOff );
     });
   }
-  function hideAllStepsButOne() {
-
+  function hideAllStepsButOne(stepWanted) {
+    console.log(stepWanted);
+    $(".step").hide();
+    $("#step"+stepWanted).show();
   }
 });
